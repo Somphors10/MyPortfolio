@@ -6,7 +6,7 @@ const NavBar = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setNavbarColor('bg-gray-300 text-black ');
+        setNavbarColor('bg-gray-700 ');
       } else {
         setNavbarColor('bg-black');
       }
