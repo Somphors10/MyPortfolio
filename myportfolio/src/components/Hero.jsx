@@ -1,9 +1,9 @@
 import React from 'react'
-import Mypic from '../assets/mypic.jpg'
+import Mypic from '../assets/port4.jpg'
 
 const Hero = () => {
   return (
-    <div className='bg-black text-white text-center py-16' id='home'>
+    <div className='bg-white text-black text-center py-16' id='home'>
       <img src={Mypic} alt="" 
       className='mx-auto mb-8 w-48 h-48 rounded-full object-cover transform 
       transition-transform duration-300 hover:scale-105'/>
@@ -12,7 +12,7 @@ const Hero = () => {
         <span className='text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500'>Srorn chansomphors</span>
         ,Frontend Developer
       </h1>
-      <p className='mt-4 text-lg text-gray-300 px-4 md:px-32'>
+      <p className='mt-4 text-lg text-gray-500 px-4 md:px-32'>
         I Specialize in building modern and responsive web applications.
       </p>
       <div className='mt-8 space-x-4 '>
