@@ -11,3 +11,38 @@
 .font-km {
   font-family: "Khmer", "Battambang", sans-serif;
 }
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.typing-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: #a855f7;
+  animation: blink-cursor 0.9s steps(2, start) infinite;
+}
+
+@keyframes blink-cursor {
+  to {
+    opacity: 0;
+  }
+}

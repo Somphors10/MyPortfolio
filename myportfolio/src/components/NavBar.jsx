@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { HiMenu, HiX } from "react-icons/hi";
+import { HiMenu, HiMoon, HiSun, HiX } from "react-icons/hi";
 import { useLanguage } from "../context/LanguageContext";
+import { useTheme } from "../context/ThemeContext";
 
 const NavBar = () => {
-  const [navbarColor, setNavbarColor] = useState("bg-white");
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  const { t, toggleLanguage } = useLanguage();
+  const { t, lang, toggleLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
 
   
 
@@ -20,7 +22,7 @@ const NavBar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setNavbarColor(window.scrollY > 50 ? "bg-purple-50/95" : "bg-white/95");
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -31,7 +33,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`${navbarColor} text-black border-b sticky top-0 z-50 backdrop-blur transition-colors duration-300`}
+      className={`${isScrolled ? "bg-purple-50/95 dark:bg-gray-900/95" : "bg-white/95 dark:bg-gray-950/95"} text-black dark:text-gray-100 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 backdrop-blur transition-colors duration-300`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
         {/* Top Row */}
@@ -59,19 +61,36 @@ const NavBar = () => {
           </div>
 
           {/* Right: Desktop Button */}
-          <div className="hidden md:block justify-self-end">
-            <a
-              href="#contact"
-              className="inline-block bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white px-4 py-2 rounded-full hover:opacity-90 transform transition duration-200 hover:scale-105 whitespace-nowrap"
-            >
-              {t("nav.connect")}
-            </a>
+          <div className="hidden md:flex justify-self-end items-center gap-2">
             <button
-              onClick={toggleLanguage}
-              className="ml-2 px-3 py-2 rounded-full border border-purple-300 text-purple-700 hover:bg-purple-50 transition"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-yellow-300 hover:scale-105 transition"
             >
-              {t("nav.langButton")}
+              {theme === "dark" ? <HiSun className="text-lg" /> : <HiMoon className="text-lg" />}
             </button>
+            <div className="inline-flex items-center p-1 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+              <button
+                onClick={() => lang === "km" && toggleLanguage()}
+                className={`px-3 py-1.5 rounded-md text-sm font-semibold transition ${
+                  lang === "en"
+                    ? "bg-white text-gray-700 shadow-sm"
+                    : "text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white"
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => lang === "en" && toggleLanguage()}
+                className={`px-3 py-1.5 rounded-md text-sm font-semibold transition ${
+                  lang === "km"
+                    ? "bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white shadow-sm"
+                    : "text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white"
+                }`}
+              >
+                ខ្មែរ
+              </button>
+            </div>
           </div>
 
           {/* Mobile: Hamburger */}
@@ -87,7 +106,7 @@ const NavBar = () => {
 
         {/* Mobile Dropdown */}
         {isOpen && (
-          <div className="md:hidden pb-4 flex flex-col gap-3 border-t pt-3">
+          <div className="md:hidden pb-4 flex flex-col gap-3 border-t border-gray-200 dark:border-gray-800 pt-3">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -99,19 +118,35 @@ const NavBar = () => {
               </a>
             ))}
 
-            <a
-              href="#contact"
-              className="w-fit bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white px-4 py-2 rounded-full hover:opacity-90"
-              onClick={closeMenu}
-            >
-              {t("nav.connect")}
-            </a>
             <button
-              onClick={toggleLanguage}
-              className="w-fit px-3 py-2 rounded-full border border-purple-300 text-purple-700 hover:bg-purple-50 transition"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="w-fit p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-yellow-300 transition"
             >
-              {t("nav.langButton")}
+              {theme === "dark" ? <HiSun className="text-lg" /> : <HiMoon className="text-lg" />}
             </button>
+            <div className="w-fit inline-flex items-center p-1 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+              <button
+                onClick={() => lang === "km" && toggleLanguage()}
+                className={`px-3 py-1.5 rounded-md text-sm font-semibold transition ${
+                  lang === "en"
+                    ? "bg-white text-gray-700 shadow-sm"
+                    : "text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white"
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => lang === "en" && toggleLanguage()}
+                className={`px-3 py-1.5 rounded-md text-sm font-semibold transition ${
+                  lang === "km"
+                    ? "bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white shadow-sm"
+                    : "text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white"
+                }`}
+              >
+                ខ្មែរ
+              </button>
+            </div>
           </div>
         )}
       </div>

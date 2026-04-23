@@ -4,7 +4,7 @@ import { useLanguage } from "../context/LanguageContext";
 const Contact = () => {
     const {t} = useLanguage();
     return (
-        <div className='bg-white text-black py-20' id='contact'>
+        <div className='bg-white dark:bg-gray-950 text-black dark:text-gray-100 py-20 transition-colors duration-300' id='contact'>
             <div className='container mx-auto px-8 md:px-16 lg:px-24 '>
                 <h2 className='text-4xl font-bold text-center mb-12'>{t("contact.title")}</h2>
                 <div className='flex flex-col md:flex-row items-center md:space-x-12 '>
@@ -20,7 +20,7 @@ const Contact = () => {
                         <div className='mb-4 mt-8'>
                             <FaPhone className="inline-block text-purple-500 mr-2" />
                             <a href="milto:srornchansomphors@gmail.com" className='hover:underline'>
-                                <span>+85585371346</span>
+                                <span>+855718120309</span>
                             </a>
                         </div>
                         <div className='mb-4 mt-8'>
@@ -33,19 +33,19 @@ const Contact = () => {
                             <div>
                                 <label htmlFor="name">{t("contact.form.name")}</label>
                                 <input type="text"
-                                    className='w-full p-2 rounded bg-white border border-gray-300 focus:outline-none focus:border-purple-500'
+                                    className='w-full p-2 rounded bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 focus:outline-none focus:border-purple-500'
                                     placeholder={t("contact.form.enterName")} />
                             </div>
                             <div>
                                 <label htmlFor="email" className='block mb-2'>{t("contact.form.email")}</label>
                                 <input type="text"
-                                    className='w-full p-2 rounded bg-white border border-gray-300 focus:outline-none focus:border-purple-500'
+                                    className='w-full p-2 rounded bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 focus:outline-none focus:border-purple-500'
                                     placeholder={t("contact.form.enterEmail")} />
                             </div>
                             <div>
                                 <label htmlFor="message" className='block mb-2'>{t("contact.form.message")}</label>
                                 <textarea type="text"
-                                    className='w-full p-2 rounded bg-white border border-gray-300 focus:outline-none focus:border-purple-500'
+                                    className='w-full p-2 rounded bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 focus:outline-none focus:border-purple-500'
                                     rows="5"
                                     placeholder={t("contact.form.enterMessage")} />
                             </div>

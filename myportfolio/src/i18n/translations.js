@@ -21,9 +21,9 @@ export const translations = {
       description:
         "I am a passionate frontend developer with a focus on building modern and responsive web applications. With a strong foundation in frontend, I strive to create seamless and efficient user experiences.",
       skills: {
-        htmlCss: "HTML & CSS",
-        react: "React JS",
-        spring: "Spring Boot",
+        htmlCss: "HTML & CSS 90%",
+        react: "React JS & Next JS 70%",
+        spring: "Spring Boot 70%",
       },
       stats: {
         years: "Years Experience",
@@ -117,9 +117,9 @@ export const translations = {
       description:
         "ខ្ញុំជាអ្នកអភិវឌ្ឍន៍ Frontend ដែលមានចំណង់ចំណូលចិត្តក្នុងការបង្កើតគេហទំព័រទំនើប និងឆ្លើយតបទៅនឹងគ្រប់ឧបករណ៍។ ជាមួយមូលដ្ឋានគ្រឹះរឹងមាំ ខ្ញុំខិតខំបង្កើតបទពិសោធន៍អ្នកប្រើដែលរលូន និងមានប្រសិទ្ធភាព។",
       skills: {
-        htmlCss: "HTML និង CSS",
-        react: "React JS",
-        spring: "Spring Boot",
+        htmlCss: "HTML និង CSS 90%",
+        react: "React JS និង Next JS 70%",
+        spring: "Spring Boot 70%",
       },
       stats: {
         years: "ឆ្នាំបទពិសោធន៍",

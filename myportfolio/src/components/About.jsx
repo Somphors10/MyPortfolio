@@ -1,11 +1,32 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import SP from '../assets/port3.jpg'
 import { useLanguage } from "../context/LanguageContext";
 
 const About = () => {
     const { t } = useLanguage();
+    const sectionRef = useRef(null);
+    const [animateBars, setAnimateBars] = useState(false);
+
+    useEffect(() => {
+        const currentSection = sectionRef.current;
+        if (!currentSection) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setAnimateBars(true);
+                    observer.unobserve(entry.target);
+                }
+            },
+            { threshold: 0.25 }
+        );
+
+        observer.observe(currentSection);
+
+        return () => observer.disconnect();
+    }, []);
   return (
-    <div className='bg-white text-black py-20' id='about'>
+    <div ref={sectionRef} className='bg-white dark:bg-gray-950 text-black dark:text-gray-100 py-20 transition-colors duration-300' id='about'>
       <div className='container mx-auto px-8 md:px-16 lg:px-24 '>
         <h2 className='text-4xl font-bold text-center mb-12'>{t("about.title")}</h2>
         <div className='flex flex-col md:flex-row items-center md:space-x-12 '>
@@ -16,29 +37,35 @@ const About = () => {
                     {t("about.description")}
                 </p>
                 <div className='space-y-4'>
-                    <div className='flex items-center'>
-                        <label htmlFor="htmlandcss" className='w-2/12'>{t("about.skills.htmlCss")}</label>
-                        <div className='grow bg-gray-800 rounded-full h-2.5'>
-                            <div className='bg-gradient-to-r from-purple-500 to-fuchsia-500 h-2.5 rounded-full 
-                            transform transition-transform duration-300 hover:scale-105 w-10/12'>
+                    <div className='flex items-center gap-3'>
+                        <label htmlFor="htmlandcss" className='w-5/12 md:w-4/12 text-sm md:text-base'>{t("about.skills.htmlCss")}</label>
+                        <div className='grow bg-gray-800 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden'>
+                            <div
+                                className='bg-gradient-to-r from-purple-500 to-fuchsia-500 h-2.5 rounded-full transform transition-[width,transform] duration-1000 ease-out hover:scale-105'
+                                style={{ width: animateBars ? "90%" : "0%" }}
+                            >
 
                             </div>
                         </div>
                     </div>
-                    <div className='flex items-center'>
-                        <label htmlFor="reactjs" className='w-2/12'>{t("about.skills.react")}</label>
-                        <div className='grow bg-gray-800 rounded-full h-2.5'>
-                            <div className='bg-gradient-to-r from-purple-500 to-fuchsia-500 h-2.5 rounded-full 
-                            transform transition-transform duration-300 hover:scale-105 w-11/12'>
+                    <div className='flex items-center gap-3'>
+                        <label htmlFor="reactjs" className='w-5/12 md:w-4/12 text-sm md:text-base'>{t("about.skills.react")}</label>
+                        <div className='grow bg-gray-800 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden'>
+                            <div
+                                className='bg-gradient-to-r from-purple-500 to-fuchsia-500 h-2.5 rounded-full transform transition-[width,transform] duration-1000 ease-out hover:scale-105'
+                                style={{ width: animateBars ? "70%" : "0%", transitionDelay: "120ms" }}
+                            >
 
                             </div>
                         </div>
                     </div>
-                    <div className='flex items-center'>
-                        <label htmlFor="vuejs" className='w-2/12'>{t("about.skills.spring")}</label>
-                        <div className='grow bg-gray-800 rounded-full h-2.5'>
-                            <div className='bg-gradient-to-r from-purple-500 to-fuchsia-500 h-2.5 rounded-full 
-                            transform transition-transform duration-300 hover:scale-105 w-9/12'>
+                    <div className='flex items-center gap-3'>
+                        <label htmlFor="vuejs" className='w-5/12 md:w-4/12 text-sm md:text-base'>{t("about.skills.spring")}</label>
+                        <div className='grow bg-gray-800 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden'>
+                            <div
+                                className='bg-gradient-to-r from-purple-500 to-fuchsia-500 h-2.5 rounded-full transform transition-[width,transform] duration-1000 ease-out hover:scale-105'
+                                style={{ width: animateBars ? "70%" : "0%", transitionDelay: "240ms" }}
+                            >
 
                             </div>
                         </div>

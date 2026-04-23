@@ -31,15 +31,15 @@ const Projects = () => {
     const { t } = useLanguage();
     const projectItems = t("projects.items");
   return (
-    <div className='bg-white text-black py-20' id='projects'>
+    <div className='bg-white dark:bg-gray-950 text-black dark:text-gray-100 py-20 transition-colors duration-300' id='projects'>
         <div className='container mx-auto px-8 md:px-16 lg:px-24 '>
             <h2 className='text-4xl font-bold text-center mb-12'>{t("projects.title")}</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {projects.map((project) => (
-                    <div key={project.id} className='bg-white border-2 p-6 rounded-lg hover:shadow-lg transform transition-transform duration-300 hover:scale-105'>
+                    <div key={project.id} className='bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-lg hover:shadow-lg hover:shadow-purple-500/10 transform transition-transform duration-300 hover:scale-105'>
                         <img src={project.image} alt={project.name} className='rounded-lg mb-4 w-full h-48 object-cover' />
                         <h3 className='text-2xl font-bold mb-2 '>{projectItems?.[project.id - 1]?.name || project.name}</h3>
-                        <p className='text-gray-400 mb-4'>{t("projects.tech")}</p>
+                        <p className='text-gray-400 dark:text-gray-300 mb-4'>{t("projects.tech")}</p>
                         <a href={project.github} className='inline-block bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white px-4 py-2 rounded-full' 
                         target='_blank' rel='noopener noreferrer'>{t("projects.github")}</a>
                     </div>

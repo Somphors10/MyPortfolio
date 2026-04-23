@@ -38,13 +38,13 @@ const Service = () => {
     const { t } = useLanguage();
     const serviceItems = t("services.items");
   return (
-    <div className='bg-white text-black py-20' id='services'>
+    <div className='bg-white dark:bg-gray-950 text-black dark:text-gray-100 py-20 transition-colors duration-300' id='services'>
         <div className='container mx-auto px-8 md:px-16 lg:px-24 '>
             <h2 className='text-4xl font-bold text-center mb-12'>{t("services.title")}</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {services.map((service) => (
                     <div key={service.id}
-                    className='bg-white border m-2 p-6 px-6 pb-6 rounded-lg hover:shadow-md transform transition-transform duration-300 hover:scale-105'>
+                    className='bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 m-2 p-6 px-6 pb-6 rounded-lg hover:shadow-md hover:shadow-purple-500/10 transform transition-transform duration-300 hover:scale-105'>
                         <div className='text-right text-2xl font-bold text-transparent 
                         bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-500'>
                             {/* {service.id} */}
@@ -52,7 +52,7 @@ const Service = () => {
                         <h3 className='mt-2 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-500'>
                             {serviceItems?.[service.id - 1]?.title || service.title}
                         </h3>
-                        <p className='mt-2 text-gray-500'>{serviceItems?.[service.id - 1]?.description || service.description}</p>
+                        <p className='mt-2 text-gray-500 dark:text-gray-300'>{serviceItems?.[service.id - 1]?.description || service.description}</p>
                         <a href="#" className='mt-4 inline-block text-purple-500 hover:text-purple-700 '>{t("services.readMore")}</a>
                     </div>
                 ))}
