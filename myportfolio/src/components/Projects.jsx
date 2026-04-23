@@ -37,7 +37,7 @@ const Projects = () => {
                         <img src={project.image} alt={project.name} className='rounded-lg mb-4 w-full h-48 object-cover' />
                         <h3 className='text-2xl font-bold mb-2 '>{project.name}</h3>
                         <p className='text-gray-400 mb-4'>{project.technologies}</p>
-                        <a href={project.github} className='inline-block bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-2 rounded-full' 
+                        <a href={project.github} className='inline-block bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white px-4 py-2 rounded-full' 
                         target='_blank' rel='noopener noreferrer'>GitHub</a>
                     </div>
                 ))}

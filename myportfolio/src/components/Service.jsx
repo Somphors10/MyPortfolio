@@ -43,14 +43,14 @@ const Service = () => {
                     <div key={service.id}
                     className='bg-white border m-2 p-6 px-6 pb-6 rounded-lg hover:shadow-md transform transition-transform duration-300 hover:scale-105'>
                         <div className='text-right text-2xl font-bold text-transparent 
-                        bg-clip-text bg-gradient-to-r from-green-600 to bg-blue-400'>
+                        bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-500'>
                             {/* {service.id} */}
                         </div>
-                        <h3 className='mt-2 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500'>
+                        <h3 className='mt-2 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-500'>
                             {service.title}
                         </h3>
                         <p className='mt-2 text-gray-500'>{service.description}</p>
-                        <a href="#" className='mt-4 inline-block text-green-400 hover:text-blue-500 '>Read More</a>
+                        <a href="#" className='mt-4 inline-block text-purple-500 hover:text-purple-700 '>Read More</a>
                     </div>
                 ))}
             </div>

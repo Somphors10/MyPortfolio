@@ -19,7 +19,7 @@ const About = () => {
                     <div className='flex items-center'>
                         <label htmlFor="htmlandcss" className='w-2/12'>HTML & CSS</label>
                         <div className='grow bg-gray-800 rounded-full h-2.5'>
-                            <div className='bg-gradient-to-r from-green-400 to-blue-500 h-2.5 rounded-full 
+                            <div className='bg-gradient-to-r from-purple-500 to-fuchsia-500 h-2.5 rounded-full 
                             transform transition-transform duration-300 hover:scale-105 w-10/12'>
 
                             </div>
@@ -28,16 +28,16 @@ const About = () => {
                     <div className='flex items-center'>
                         <label htmlFor="reactjs" className='w-2/12'>React JS</label>
                         <div className='grow bg-gray-800 rounded-full h-2.5'>
-                            <div className='bg-gradient-to-r from-green-400 to-blue-500 h-2.5 rounded-full 
+                            <div className='bg-gradient-to-r from-purple-500 to-fuchsia-500 h-2.5 rounded-full 
                             transform transition-transform duration-300 hover:scale-105 w-11/12'>
 
                             </div>
                         </div>
                     </div>
                     <div className='flex items-center'>
-                        <label htmlFor="vuejs" className='w-2/12'>Vue JS</label>
+                        <label htmlFor="vuejs" className='w-2/12'>Spring Boot</label>
                         <div className='grow bg-gray-800 rounded-full h-2.5'>
-                            <div className='bg-gradient-to-r from-green-400 to-blue-500 h-2.5 rounded-full 
+                            <div className='bg-gradient-to-r from-purple-500 to-fuchsia-500 h-2.5 rounded-full 
                             transform transition-transform duration-300 hover:scale-105 w-9/12'>
 
                             </div>
@@ -46,19 +46,19 @@ const About = () => {
                 </div>
                 <div className='mt-12 flex justify-between text-center'>
                     <div>
-                        <h3 className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500'>
+                        <h3 className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-500'>
                             1+
                         </h3>
                         <p>Years Experience</p>
                     </div>
                     <div>
-                        <h3 className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500'>
+                        <h3 className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-500'>
                             10+
                         </h3>
                         <p>Projects Completed</p>
                     </div>
                     <div>
-                        <h3 className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500'>
+                        <h3 className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-500'>
                             7+
                         </h3>
                         <p>Happy Clients</p>
