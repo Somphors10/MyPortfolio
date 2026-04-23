@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import { useLanguage } from "../context/LanguageContext";
 
 const NavBar = () => {
   const [navbarColor, setNavbarColor] = useState("bg-white");
   const [isOpen, setIsOpen] = useState(false);
 
+  const { t, toggleLanguage } = useLanguage();
+
+  
+
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About Me" },
-    { href: "#services", label: "Services" },
-    { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
+    { href: "#home", label: t("nav.home") },
+    { href: "#about", label: t("nav.about") },
+    { href: "#services", label: t("nav.services") },
+    { href: "#projects", label: t("nav.projects") },
+    { href: "#contact", label: t("nav.contact") },
   ];
 
   useEffect(() => {
@@ -59,8 +64,14 @@ const NavBar = () => {
               href="#contact"
               className="inline-block bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white px-4 py-2 rounded-full hover:opacity-90 transform transition duration-200 hover:scale-105 whitespace-nowrap"
             >
-              Connect Me
+              {t("nav.connect")}
             </a>
+            <button
+              onClick={toggleLanguage}
+              className="ml-2 px-3 py-2 rounded-full border border-purple-300 text-purple-700 hover:bg-purple-50 transition"
+            >
+              {t("nav.langButton")}
+            </button>
           </div>
 
           {/* Mobile: Hamburger */}
@@ -93,8 +104,14 @@ const NavBar = () => {
               className="w-fit bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white px-4 py-2 rounded-full hover:opacity-90"
               onClick={closeMenu}
             >
-              Connect Me
+              {t("nav.connect")}
             </a>
+            <button
+              onClick={toggleLanguage}
+              className="w-fit px-3 py-2 rounded-full border border-purple-300 text-purple-700 hover:bg-purple-50 transition"
+            >
+              {t("nav.langButton")}
+            </button>
           </div>
         )}
       </div>

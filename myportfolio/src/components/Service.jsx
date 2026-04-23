@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLanguage } from "../context/LanguageContext";
 
 const services = [
     {
@@ -34,10 +35,12 @@ const services = [
 ];
 
 const Service = () => {
+    const { t } = useLanguage();
+    const serviceItems = t("services.items");
   return (
     <div className='bg-white text-black py-20' id='services'>
         <div className='container mx-auto px-8 md:px-16 lg:px-24 '>
-            <h2 className='text-4xl font-bold text-center mb-12'>My Services</h2>
+            <h2 className='text-4xl font-bold text-center mb-12'>{t("services.title")}</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {services.map((service) => (
                     <div key={service.id}
@@ -47,10 +50,10 @@ const Service = () => {
                             {/* {service.id} */}
                         </div>
                         <h3 className='mt-2 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-500'>
-                            {service.title}
+                            {serviceItems?.[service.id - 1]?.title || service.title}
                         </h3>
-                        <p className='mt-2 text-gray-500'>{service.description}</p>
-                        <a href="#" className='mt-4 inline-block text-purple-500 hover:text-purple-700 '>Read More</a>
+                        <p className='mt-2 text-gray-500'>{serviceItems?.[service.id - 1]?.description || service.description}</p>
+                        <a href="#" className='mt-4 inline-block text-purple-500 hover:text-purple-700 '>{t("services.readMore")}</a>
                     </div>
                 ))}
             </div>
