@@ -4,6 +4,8 @@ import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import Service from './components/Service'
 import Projects from './components/Projects'
+import Experience from './components/Experience'
+import Testimonials from './components/Testimonials'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -51,8 +53,10 @@ function App() {
         <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "80ms" }}><About/></div>
         <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "120ms" }}><Service/></div>
         <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "160ms" }}><Projects/></div>
-        <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "200ms" }}><Contact/></div>
-        <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "240ms" }}><Footer/></div>
+        <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "200ms" }}><Experience/></div>
+        <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "240ms" }}><Testimonials/></div>
+        <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "280ms" }}><Contact/></div>
+        <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "320ms" }}><Footer/></div>
       </div>
       </div>
    </div>

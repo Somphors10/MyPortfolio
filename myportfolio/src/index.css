@@ -9,9 +9,11 @@
     scroll-behavior: smooth;
     /* Fixed header: anchor jumps land below the bar */
     scroll-padding-top: calc(4.25rem + env(safe-area-inset-top, 0px));
+    overflow-x: hidden;
   }
   body {
     @apply antialiased;
+    overflow-x: hidden;
   }
   section[id] {
     scroll-margin-top: calc(4.75rem + env(safe-area-inset-top, 0px));

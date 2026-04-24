@@ -79,10 +79,79 @@ export const translations = {
       title: "My Projects",
       tech: "MERN Stack",
       github: "GitHub",
+      roleLabel: "My role",
+      defaultRole: "Full-stack developer",
+      defaultResult: "Delivered a functional solution focused on clean UI, performance, and user-friendly flow.",
       items: [
-        { name: "Nexcent" },
-        { name: "YouTube clone" },
-        { name: "Employee MS" },
+        {
+          name: "WEB Project",
+          tech: "React JS",
+          role: "Frontend Developer",
+          result: "Built reusable UI components and improved responsive behavior across desktop and mobile.",
+        },
+        {
+          name: "YouTube Clone",
+          tech: "HTML & CSS",
+          role: "Frontend Developer",
+          result: "Recreated a familiar video platform layout with clean structure and smooth visual hierarchy.",
+        },
+        {
+          name: "Employee Management System",
+          tech: "JavaScript",
+          role: "Full-stack Learner Project",
+          result: "Implemented CRUD workflow for employee data with better usability and clearer navigation.",
+        },
+      ],
+    },
+    experience: {
+      title: "Experience & Journey",
+      subtitle: "A quick timeline of my learning and practical project work.",
+      items: [
+        {
+          role: "Frontend Developer Trainee",
+          company: "Self-Learning & Real Projects",
+          period: "2024 - Present",
+          description:
+            "Focused on React, responsive UI, and modern component architecture through portfolio and mini-project development.",
+        },
+        {
+          role: "Backend & API Practice",
+          company: "Personal Projects",
+          period: "2024 - 2025",
+          description:
+            "Built server-side logic and database integration for learning full-stack workflow, including authentication and data handling.",
+        },
+        {
+          role: "Web Development Student",
+          company: "Academic / Practical Assignments",
+          period: "2023 - 2024",
+          description:
+            "Completed course projects with HTML, CSS, and JavaScript, building a strong foundation for real-world web development.",
+        },
+      ],
+    },
+    testimonials: {
+      title: "Testimonials",
+      subtitle: "Feedback from people I collaborated and learned with.",
+      items: [
+        {
+          name: "Project Teammate",
+          role: "University Collaboration",
+          quote:
+            "Somphors is dependable and detail-focused. He always improves UI quality and helps the team deliver on time.",
+        },
+        {
+          name: "Mentor Feedback",
+          role: "Code Review",
+          quote:
+            "He learns quickly, asks the right questions, and consistently turns feedback into better implementations.",
+        },
+        {
+          name: "Practice Client",
+          role: "Small Business Demo",
+          quote:
+            "Communication was smooth and the final website looked modern and easy to use on mobile.",
+        },
       ],
     },
     contact: {
@@ -194,10 +263,79 @@ export const translations = {
       title: "គម្រោងរបស់ខ្ញុំ",
       tech: "MERN Stack",
       github: "GitHub",
+      roleLabel: "តួនាទីរបស់ខ្ញុំ",
+      defaultRole: "អ្នកអភិវឌ្ឍន៍ Full-stack",
+      defaultResult: "បានបង្កើតដំណោះស្រាយដែលប្រើប្រាស់បានពិតប្រាកដ ដោយផ្តោតលើ UI ស្អាត ល្បឿន និងបទពិសោធន៍អ្នកប្រើ។",
       items: [
-        { name: "Nexcent" },
-        { name: "YouTube ក្លូន" },
-        { name: "ប្រព័ន្ធគ្រប់គ្រងបុគ្គលិក" },
+        {
+          name: "គម្រោង WEB",
+          tech: "React JS",
+          role: "អ្នកអភិវឌ្ឍន៍ Frontend",
+          result: "បានបង្កើត component ដែលអាចប្រើឡើងវិញ និងធ្វើឱ្យការឆ្លើយតបលើទូរស័ព្ទ និងកុំព្យូទ័រប្រសើរឡើង។",
+        },
+        {
+          name: "YouTube ក្លូន",
+          tech: "HTML & CSS",
+          role: "អ្នកអភិវឌ្ឍន៍ Frontend",
+          result: "បានរៀបចំ layout ស្រដៀង platform ពិតប្រាកដ ដោយមានរចនាសម្ព័ន្ធច្បាស់ និង UI ងាយស្រួលមើល។",
+        },
+        {
+          name: "ប្រព័ន្ធគ្រប់គ្រងបុគ្គលិក",
+          tech: "JavaScript",
+          role: "គម្រោងអនុវត្ត Full-stack",
+          result: "បានអនុវត្តលំហូរ CRUD សម្រាប់ទិន្នន័យបុគ្គលិក និងធ្វើឱ្យ navigation ងាយប្រើជាងមុន។",
+        },
+      ],
+    },
+    experience: {
+      title: "បទពិសោធន៍ និងដំណើរ",
+      subtitle: "សង្ខេបដំណើរការសិក្សា និងការអនុវត្តគម្រោងរបស់ខ្ញុំ។",
+      items: [
+        {
+          role: "អ្នកអភិវឌ្ឍន៍ Frontend កំពុងហ្វឹកហាត់",
+          company: "សិក្សាដោយខ្លួនឯង និងគម្រោងពិត",
+          period: "2024 - បច្ចុប្បន្ន",
+          description:
+            "ផ្តោតលើ React, responsive UI និង component architecture ទំនើប តាមរយៈ portfolio និង mini-projects។",
+        },
+        {
+          role: "អនុវត្ត Backend និង API",
+          company: "គម្រោងផ្ទាល់ខ្លួន",
+          period: "2024 - 2025",
+          description:
+            "អភិវឌ្ឍ logic ខាង server និងភ្ជាប់ database ដើម្បីយល់ច្បាស់ពីលំហូរ Full-stack រួមទាំង authentication និង data handling។",
+        },
+        {
+          role: "និស្សិតអភិវឌ្ឍន៍គេហទំព័រ",
+          company: "ការសិក្សា និងការងារអនុវត្ត",
+          period: "2023 - 2024",
+          description:
+            "បញ្ចប់គម្រោងសិក្សាជាច្រើនដោយ HTML, CSS និង JavaScript ដើម្បីបង្កើតមូលដ្ឋានរឹងមាំសម្រាប់ការងារពិត។",
+        },
+      ],
+    },
+    testimonials: {
+      title: "មតិយោបល់",
+      subtitle: "មតិយោបល់ពីអ្នកដែលបានសហការនិងសិក្សារួមជាមួយខ្ញុំ។",
+      items: [
+        {
+          name: "មិត្តរួមក្រុមគម្រោង",
+          role: "ការងារសហការ",
+          quote:
+            "Somphors មានទំនួលខុសត្រូវខ្ពស់ និងយកចិត្តទុកដាក់លម្អិត។ គាត់ជួយលើកគុណភាព UI និងបញ្ចប់ការងារតាមពេល។",
+        },
+        {
+          name: "មតិយោបល់ពីអ្នកណែនាំ",
+          role: "Code Review",
+          quote:
+            "គាត់រៀនបានលឿន សួរសំណួរត្រឹមត្រូវ និងអាចយក feedback ទៅអភិវឌ្ឍការងារបានល្អជានិច្ច។",
+        },
+        {
+          name: "អតិថិជនសាកល្បង",
+          role: "Small Business Demo",
+          quote:
+            "ការទំនាក់ទំនងមានភាពរលូន ហើយគេហទំព័រចុងក្រោយមើលទៅទំនើប និងងាយប្រើលើទូរស័ព្ទ។",
+        },
       ],
     },
     contact: {

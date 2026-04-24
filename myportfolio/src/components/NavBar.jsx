@@ -32,27 +32,6 @@ const NavBar = () => {
   }, []);
 
   useEffect(() => {
-    if (!isOpen) return;
-
-    const mq = window.matchMedia(MD_UP);
-    const applyLock = () => {
-      if (mq.matches) {
-        document.body.style.removeProperty("overflow");
-      } else {
-        document.body.style.overflow = "hidden";
-      }
-    };
-
-    applyLock();
-    mq.addEventListener("change", applyLock);
-
-    return () => {
-      mq.removeEventListener("change", applyLock);
-      document.body.style.removeProperty("overflow");
-    };
-  }, [isOpen]);
-
-  useEffect(() => {
     const sectionIds = ["home", "about", "services", "projects", "contact"];
     const sections = sectionIds
       .map((id) => document.getElementById(id))
@@ -102,11 +81,10 @@ const NavBar = () => {
 
   const barOffset = "calc(4.25rem + env(safe-area-inset-top, 0px))";
 
-  const topBarClass = `border-b transition-all duration-300 ${
-    isScrolled || isOpen
+  const topBarClass = `border-b transition-all duration-300 ${isScrolled || isOpen
       ? "border-purple-200/50 bg-white/92 shadow-md backdrop-blur-xl dark:border-slate-700/60 dark:bg-slate-950/92"
       : "border-transparent bg-white/80 backdrop-blur-md dark:bg-slate-950/80"
-  }`;
+    }`;
 
   return (
     <>
@@ -114,7 +92,7 @@ const NavBar = () => {
         className="fixed inset-x-0 top-0 z-50 text-slate-900 dark:text-slate-100"
         style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
       >
-        <div className={topBarClass}>
+        <div className={`${topBarClass} relative`}>
           <nav aria-label="Primary">
             <div className="mx-auto grid h-[4.25rem] max-w-7xl grid-cols-[1fr_auto] items-center px-4 md:grid-cols-[auto_1fr_auto] md:px-8 md:gap-8 lg:px-12">
               <a
@@ -132,11 +110,10 @@ const NavBar = () => {
                   <a
                     key={link.href}
                     href={link.href}
-                    className={`rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
-                      activeSection === link.href.slice(1)
+                    className={`rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${activeSection === link.href.slice(1)
                         ? "bg-purple-500/12 text-violet-700 dark:bg-fuchsia-500/20 dark:text-fuchsia-200"
                         : "text-slate-600 hover:bg-purple-500/10 hover:text-violet-700 dark:text-slate-300 dark:hover:bg-fuchsia-500/10 dark:hover:text-fuchsia-200"
-                    }`}
+                      }`}
                     aria-current={activeSection === link.href.slice(1) ? "page" : undefined}
                   >
                     {link.label}
@@ -157,22 +134,20 @@ const NavBar = () => {
                   <button
                     type="button"
                     onClick={() => lang === "km" && toggleLanguage()}
-                    className={`rounded-full px-3.5 py-1.5 text-xs font-bold transition ${
-                      lang === "en"
+                    className={`rounded-full px-3.5 py-1.5 text-xs font-bold transition ${lang === "en"
                         ? "bg-white text-violet-700 shadow-sm dark:bg-slate-700 dark:text-white"
                         : "text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white"
-                    }`}
+                      }`}
                   >
                     EN
                   </button>
                   <button
                     type="button"
                     onClick={() => lang === "en" && toggleLanguage()}
-                    className={`rounded-full px-3.5 py-1.5 text-xs font-bold transition ${
-                      lang === "km"
+                    className={`rounded-full px-3.5 py-1.5 text-xs font-bold transition ${lang === "km"
                         ? "bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-md"
                         : "text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white"
-                    }`}
+                      }`}
                   >
                     ខ្មែរ
                   </button>
@@ -196,22 +171,18 @@ const NavBar = () => {
         {isOpen && (
           <div
             id="mobile-nav-panel"
-            className="fixed inset-x-0 bottom-0 z-[48] border-t border-slate-200 bg-white shadow-xl dark:border-slate-700 dark:bg-slate-950 md:hidden"
-            style={{
-              top: barOffset,
-            }}
+            className="absolute inset-x-0 top-full z-[48] border-t border-slate-200 bg-white shadow-xl dark:border-slate-700 dark:bg-slate-950 md:hidden"
           >
-            <div className="mx-auto h-full max-w-7xl overflow-y-auto overscroll-contain px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom,0px))] md:px-8 lg:px-12">
+            <div className="mx-auto max-w-7xl px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom,0px))] md:px-8 lg:px-12">
               <div className="flex flex-col gap-1">
                 {navLinks.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
-                    className={`rounded-xl px-3 py-3 text-base font-medium transition-colors ${
-                      activeSection === link.href.slice(1)
+                    className={`rounded-xl px-3 py-3 text-base font-medium transition-colors ${activeSection === link.href.slice(1)
                         ? "bg-purple-500/12 text-violet-700 dark:bg-fuchsia-500/20 dark:text-fuchsia-200"
                         : "text-slate-900 hover:bg-purple-500/10 hover:text-violet-700 active:bg-purple-500/15 dark:text-slate-100 dark:hover:bg-fuchsia-500/10"
-                    }`}
+                      }`}
                     onClick={closeMenu}
                     aria-current={activeSection === link.href.slice(1) ? "page" : undefined}
                   >
@@ -232,18 +203,16 @@ const NavBar = () => {
                   <button
                     type="button"
                     onClick={() => lang === "km" && toggleLanguage()}
-                    className={`rounded-full px-3 py-1.5 text-xs font-bold ${
-                      lang === "en" ? "bg-white shadow dark:bg-slate-700" : ""
-                    }`}
+                    className={`rounded-full px-3 py-1.5 text-xs font-bold ${lang === "en" ? "bg-white shadow dark:bg-slate-700" : ""
+                      }`}
                   >
                     EN
                   </button>
                   <button
                     type="button"
                     onClick={() => lang === "en" && toggleLanguage()}
-                    className={`rounded-full px-3 py-1.5 text-xs font-bold ${
-                      lang === "km" ? "bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white" : ""
-                    }`}
+                    className={`rounded-full px-3 py-1.5 text-xs font-bold ${lang === "km" ? "bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white" : ""
+                      }`}
                   >
                     ខ្មែរ
                   </button>

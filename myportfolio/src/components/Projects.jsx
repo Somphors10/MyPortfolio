@@ -62,8 +62,17 @@ const Projects = () => {
                   {projectItems?.[project.id - 1]?.name || project.name}
                 </h3>
                 <span className="mt-2 inline-flex w-fit rounded-full border border-purple-200/80 bg-purple-50 px-3 py-1 text-xs font-semibold text-violet-700 dark:border-purple-500/30 dark:bg-purple-950/50 dark:text-fuchsia-200">
-                  {t("projects.tech")}
+                  {projectItems?.[project.id - 1]?.tech || project.technologies || t("projects.tech")}
                 </span>
+                <p className="mt-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  {t("projects.roleLabel") || "My role"}:{" "}
+                  <span className="font-normal">
+                    {projectItems?.[project.id - 1]?.role || t("projects.defaultRole")}
+                  </span>
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                  {projectItems?.[project.id - 1]?.result || t("projects.defaultResult")}
+                </p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {project.github ? (
                     <a
