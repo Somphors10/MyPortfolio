@@ -1,5 +1,5 @@
 import React from "react";
-import Mypic from "../assets/port1.jpg";
+import Mypic from "../assets/skin.jpg";
 import Mypic1 from "../assets/coza1.jpg";
 import { FaGithub } from "react-icons/fa";
 import { useLanguage } from "../context/LanguageContext";
@@ -14,10 +14,10 @@ const projects = [
   },
   {
     id: 2,
-    name: "YouTube clone",
-    technologies: "HTML & CSS",
+    name: "SS Face Skin",
+    technologies: "Reach JS",
     image: Mypic,
-    github: "https://github.com/Somphors10/TempYoutue",
+    github: "https://skin-product-nine.vercel.app",
   },
   {
     id: 3,
