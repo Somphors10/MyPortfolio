@@ -10,21 +10,21 @@ const projects = [
     name: "COZA STORE",
     technologies: "Reach JS",
     image: Mypic1,
-    github: "https://coza-shop.vercel.app",
+    link: "https://coza-shop.vercel.app",
   },
   {
     id: 2,
     name: "SS Face Skin",
     technologies: "Reach JS",
     image: Mypic,
-    github: "https://skin-product-nine.vercel.app",
+    link: "https://skin-product-nine.vercel.app",
   },
   {
     id: 3,
     name: "Employee MS",
     technologies: "Javascript",
     image: Mypic,
-    github: "https://github.com/Somphors10/15_SRORN_CHANSOMPHORS_PP_Web_Homework005",
+    link: "https://skin-product-nine.vercel.app",
   },
 ];
 
@@ -74,19 +74,18 @@ const Projects = () => {
                   {projectItems?.[project.id - 1]?.result || t("projects.defaultResult")}
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2">
-                  {project.github ? (
+                  {project.link ? (
                     <a
-                      href={project.github}
-                      className="btn-primary inline-flex gap-2 text-xs sm:text-sm"
+                      href={project.link}
+                      className="btn-primary text-xs sm:text-sm"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaGithub className="text-base" />
-                      {t("projects.github")}
+                      {t("projects.viewLive")}
                     </a>
                   ) : (
                     <span className="inline-flex items-center rounded-full border border-dashed border-slate-300 px-4 py-2.5 text-xs font-medium text-slate-500 dark:border-slate-600 dark:text-slate-500">
-                      {t("projects.github")}
+                      {t("projects.comingSoon")}
                     </span>
                   )}
                 </div>
