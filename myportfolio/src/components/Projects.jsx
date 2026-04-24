@@ -1,16 +1,16 @@
 import React from "react";
 import Mypic from "../assets/port1.jpg";
-import Mypic1 from "../assets/pic1.svg";
+import Mypic1 from "../assets/coza1.jpg";
 import { FaGithub } from "react-icons/fa";
 import { useLanguage } from "../context/LanguageContext";
 
 const projects = [
   {
     id: 1,
-    name: "WEB Project",
+    name: "COZA STORE",
     technologies: "Reach JS",
     image: Mypic1,
-    github: "https://github.com/Somphors10/15_Srorn_Chansomphors_PP_Web_Mini_Project001",
+    github: "https://coza-shop.vercel.app",
   },
   {
     id: 2,
