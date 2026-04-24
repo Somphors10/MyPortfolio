@@ -7,8 +7,8 @@ const Contact = () => {
         <div className='bg-white dark:bg-gray-950 text-black dark:text-gray-100 py-20 transition-colors duration-300' id='contact'>
             <div className='container mx-auto px-8 md:px-16 lg:px-24 '>
                 <h2 className='text-4xl font-bold text-center mb-12'>{t("contact.title")}</h2>
-                <div className='flex flex-col md:flex-row items-center md:space-x-12 '>
-                    <div className='flex-1'>
+                <div className='flex flex-col md:flex-row items-stretch md:space-x-12 gap-6'>
+                    <div className='flex-1 glass-card rounded-2xl p-6'>
                         <h3 className='text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-500 mb-4'>{t("contact.subtitle")}</h3>
                         <p>{t("contact.description")}</p>
                         <div className='mb-4 mt-8'>
@@ -28,7 +28,7 @@ const Contact = () => {
                             <span>{t("contact.location")}</span>
                         </div>
                     </div>
-                    <div className='flex-1 w-full'>
+                    <div className='flex-1 w-full glass-card rounded-2xl p-6'>
                         <div className='space-y-4'>
                             <div>
                                 <label htmlFor="name">{t("contact.form.name")}</label>

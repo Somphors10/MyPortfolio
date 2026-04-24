@@ -29,9 +29,9 @@ const About = () => {
     <div ref={sectionRef} className='bg-white dark:bg-gray-950 text-black dark:text-gray-100 py-20 transition-colors duration-300' id='about'>
       <div className='container mx-auto px-8 md:px-16 lg:px-24 '>
         <h2 className='text-4xl font-bold text-center mb-12'>{t("about.title")}</h2>
-        <div className='flex flex-col md:flex-row items-center md:space-x-12 '>
+        <div className='flex flex-col md:flex-row items-center md:space-x-12'>
             <img src={SP} alt="" 
-            className='w-72 h-80 rounded object-cover mb-8 md:mb-0'/>
+            className='w-72 h-80 rounded-2xl object-cover mb-8 md:mb-0 shadow-xl'/>
             <div className='flex-1'>
                 <p className='text-lg mb-8'>
                     {t("about.description")}
@@ -71,20 +71,20 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className='mt-12 flex justify-between text-center'>
-                    <div>
+                <div className='mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center'>
+                    <div className='glass-card rounded-xl py-4'>
                         <h3 className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-500'>
                             1+
                         </h3>
                         <p>{t("about.stats.years")}</p>
                     </div>
-                    <div>
+                    <div className='glass-card rounded-xl py-4'>
                         <h3 className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-500'>
                             10+
                         </h3>
                         <p>{t("about.stats.projects")}</p>
                     </div>
-                    <div>
+                    <div className='glass-card rounded-xl py-4'>
                         <h3 className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-500'>
                             7+
                         </h3>

@@ -35,14 +35,19 @@ function App() {
   }, []);
 
   return (
-   <div className={`${lang === "km" ? "font-km" : "font-en"} ${theme === "dark" ? "dark bg-gray-950 text-gray-100" : "bg-white text-black"} transition-colors duration-300 min-h-screen`}>
+   <div className={`${lang === "km" ? "font-km" : "font-en"} ${theme === "dark" ? "dark bg-gray-950 text-gray-100" : "bg-white text-black"} transition-colors duration-300 min-h-screen relative overflow-hidden`}>
+      <div className="floating-orb w-72 h-72 bg-purple-400 -top-16 -left-16" />
+      <div className="floating-orb w-80 h-80 bg-fuchsia-400 top-[22%] -right-24" style={{ animationDelay: "1.2s" }} />
+      <div className="floating-orb w-64 h-64 bg-indigo-300 bottom-16 left-[30%]" style={{ animationDelay: "2s" }} />
       <NavBar/>
-      <div data-reveal className="reveal-on-scroll"><Hero/></div>
-      <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "80ms" }}><About/></div>
-      <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "120ms" }}><Service/></div>
-      <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "160ms" }}><Projects/></div>
-      <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "200ms" }}><Contact/></div>
-      <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "240ms" }}><Footer/></div>
+      <div className="relative z-10">
+        <div data-reveal className="reveal-on-scroll"><Hero/></div>
+        <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "80ms" }}><About/></div>
+        <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "120ms" }}><Service/></div>
+        <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "160ms" }}><Projects/></div>
+        <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "200ms" }}><Contact/></div>
+        <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "240ms" }}><Footer/></div>
+      </div>
    </div>
   )
 }

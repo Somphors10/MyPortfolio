@@ -1,12 +1,12 @@
 import React from 'react'
-import { FaFacebook, FaGithub, FaLinkedin, FaMedium, FaTwitter } from 'react-icons/fa'
+import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa'
 import { useLanguage } from "../context/LanguageContext";
 const Footer = () => {
     const {t} = useLanguage();
   return (
-    <footer className='bg-white dark:bg-gray-950 text-black dark:text-gray-100 py-8 transition-colors duration-300'>
+    <footer className='bg-white dark:bg-gray-950 text-black dark:text-gray-100 py-10 transition-colors duration-300'>
         <div className='container mx-auto px-8 md:px-16 lg:px-24'>
-            <div className='flex flex-col md:flex-row md:space-x-12 items-center mb-4'>
+            <div className='glass-card rounded-2xl p-6 flex flex-col md:flex-row md:space-x-12 items-center mb-6'>
                 <div className='flex-1 mb-4 md:mb-0'>
                     <h3 className='text-2xl font-bold mb-2'>Somphors</h3>
                     <p className='text-gray-400 dark:text-gray-300'>{t("footer.description")}</p>
@@ -26,16 +26,13 @@ const Footer = () => {
                     &copy; {new Date().getFullYear()}
                 </p>
                 <div className='flex space-x-4 my-4 md:my-0'>
-                    <a href="#" className='text-gray-400 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'>
+                    <a href="https://www.facebook.com/som.phors.922685" target='_blank' rel='noopener noreferrer' className='text-gray-400 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'>
                         <FaFacebook/>
                     </a>
-                    <a href="#" className='text-gray-400 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'>
+                    <a href="https://www.linkedin.com/in/srorn-chansomphors-1b579030b/" target='_blank' rel='noopener noreferrer' className='text-gray-400 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'>
                         <FaLinkedin/>
                     </a>
-                    <a href="#" className='text-gray-400 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'>
-                        <FaTwitter/>
-                    </a>
-                    <a href="#" className='text-gray-400 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'>
+                    <a href="https://github.com/Somphors10" target='_blank' rel='noopener noreferrer' className='text-gray-400 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'>
                         <FaGithub/>
                     </a>
                 </div>
