@@ -1,8 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Moul&family=Battambang:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Moul&family=Battambang:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Fixed header: anchor jumps land below the bar */
+    scroll-padding-top: calc(4.25rem + env(safe-area-inset-top, 0px));
+  }
+  body {
+    @apply antialiased;
+  }
+  section[id] {
+    scroll-margin-top: calc(4.75rem + env(safe-area-inset-top, 0px));
+  }
+}
 
 .font-en {
   font-family: "Poppins", sans-serif;
@@ -16,38 +30,53 @@
   position: relative;
 }
 
+/* Section title: small label + gradient underline */
+.section-kicker {
+  @apply text-xs font-semibold uppercase tracking-[0.2em] text-purple-600/90 dark:text-fuchsia-400/90 mb-2;
+}
+
+.section-title {
+  @apply text-3xl sm:text-4xl md:text-[2.75rem] font-bold tracking-tight text-slate-900 dark:text-white;
+}
+
+.section-title-line {
+  @apply mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-violet-500 via-fuchsia-500 to-purple-400 opacity-90;
+}
+
 .glass-card {
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.12);
-  backdrop-filter: blur(10px);
+  @apply rounded-2xl border border-white/60 bg-white/70 shadow-card backdrop-blur-xl;
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.5) inset,
+    0 10px 40px -10px rgba(91, 33, 182, 0.12);
 }
 
 .dark .glass-card {
-  background: rgba(17, 24, 39, 0.7);
-  border-color: rgba(139, 92, 246, 0.2);
-  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
+  @apply border-purple-500/15 bg-slate-900/55 shadow-card-dark;
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.04) inset,
+    0 12px 40px -8px rgba(0, 0, 0, 0.5);
 }
 
 .floating-orb {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(48px);
-  opacity: 0.35;
+  filter: blur(56px);
+  opacity: 0.32;
   pointer-events: none;
-  animation: float-orb 8s ease-in-out infinite;
+  animation: float-orb 10s ease-in-out infinite;
 }
 
 .dark .floating-orb {
-  opacity: 0.2;
+  opacity: 0.18;
 }
 
 @keyframes float-orb {
-  0%, 100% {
-    transform: translateY(0px);
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0);
   }
   50% {
-    transform: translateY(-14px);
+    transform: translateY(-18px) translateX(6px);
   }
 }
 
@@ -71,12 +100,16 @@
     transform: none;
     transition: none;
   }
+
+  .floating-orb {
+    animation: none;
+  }
 }
 
 .typing-cursor {
   display: inline-block;
   margin-left: 2px;
-  color: #a855f7;
+  color: #c026d3;
   animation: blink-cursor 0.9s steps(2, start) infinite;
 }
 
@@ -84,4 +117,42 @@
   to {
     opacity: 0;
   }
+}
+
+/* Subtle page grain (very light) */
+.page-mesh::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+  background-image: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      rgba(139, 92, 246, 0.15),
+      transparent 50%
+    ),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(217, 70, 239, 0.08), transparent 45%);
+}
+
+.dark .page-mesh::before {
+  opacity: 0.5;
+  background-image: radial-gradient(
+      ellipse 70% 40% at 50% 0%,
+      rgba(91, 33, 182, 0.25),
+      transparent 55%
+    ),
+    radial-gradient(ellipse 50% 30% at 100% 10%, rgba(192, 38, 211, 0.12), transparent 50%);
+}
+
+.input-elegant {
+  @apply w-full rounded-xl border border-slate-200/90 bg-white/90 px-4 py-3 text-slate-900 shadow-sm transition-all duration-200 placeholder:text-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 dark:border-slate-600/80 dark:bg-slate-950/60 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-fuchsia-500 dark:focus:ring-fuchsia-500/20;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-500/25 transition-all duration-200 hover:scale-[1.02] hover:shadow-glow active:scale-[0.98];
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-full border border-purple-300/80 bg-white/90 px-6 py-3 text-sm font-semibold text-violet-700 shadow-sm transition-all duration-200 hover:border-purple-500 hover:bg-white dark:border-purple-500/40 dark:bg-slate-900/80 dark:text-fuchsia-200 dark:hover:border-fuchsia-400/60;
 }

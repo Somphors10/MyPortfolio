@@ -1,6 +1,5 @@
 
 import { useEffect } from "react";
-import './App.css'
 import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import Service from './components/Service'
@@ -35,11 +34,18 @@ function App() {
   }, []);
 
   return (
-   <div className={`${lang === "km" ? "font-km" : "font-en"} ${theme === "dark" ? "dark bg-gray-950 text-gray-100" : "bg-white text-black"} transition-colors duration-300 min-h-screen relative overflow-hidden`}>
-      <div className="floating-orb w-72 h-72 bg-purple-400 -top-16 -left-16" />
-      <div className="floating-orb w-80 h-80 bg-fuchsia-400 top-[22%] -right-24" style={{ animationDelay: "1.2s" }} />
-      <div className="floating-orb w-64 h-64 bg-indigo-300 bottom-16 left-[30%]" style={{ animationDelay: "2s" }} />
-      <NavBar/>
+   <div className={`page-mesh ${lang === "km" ? "font-km" : "font-en"} ${theme === "dark" ? "dark bg-surface-dark text-slate-100" : "bg-surface text-slate-900"} transition-colors duration-500 min-h-screen relative`}>
+      <NavBar />
+      {/* Spacer for fixed header (matches NavBar bar + safe area) */}
+      <div
+        className="shrink-0"
+        style={{ height: "calc(4.25rem + env(safe-area-inset-top, 0px))" }}
+        aria-hidden
+      />
+      <div className="relative overflow-x-hidden">
+      <div className="floating-orb w-[22rem] h-[22rem] bg-violet-400 -top-24 -left-20" />
+      <div className="floating-orb w-[26rem] h-[26rem] bg-fuchsia-400/90 top-[18%] -right-32" style={{ animationDelay: "1.2s" }} />
+      <div className="floating-orb w-72 h-72 bg-indigo-400 bottom-10 left-[25%]" style={{ animationDelay: "2.4s" }} />
       <div className="relative z-10">
         <div data-reveal className="reveal-on-scroll"><Hero/></div>
         <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "80ms" }}><About/></div>
@@ -47,6 +53,7 @@ function App() {
         <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "160ms" }}><Projects/></div>
         <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "200ms" }}><Contact/></div>
         <div data-reveal className="reveal-on-scroll" style={{ "--reveal-delay": "240ms" }}><Footer/></div>
+      </div>
       </div>
    </div>
   )
