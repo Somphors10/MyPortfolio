@@ -1,6 +1,7 @@
 import React from "react";
 import Mypic from "../assets/skin.jpg";
 import Mypic1 from "../assets/coza1.jpg";
+import Mypic2 from "../assets/dashboard.jpg";
 import { FaGithub } from "react-icons/fa";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -23,8 +24,8 @@ const projects = [
     id: 3,
     name: "Employee MS",
     technologies: "Javascript",
-    image: Mypic,
-    link: "https://skin-product-nine.vercel.app",
+    image: Mypic2,
+    link: "https://dash-board-shop-nine.vercel.app",
   },
 ];
 
