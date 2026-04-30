@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Mypic from "../assets/port4.jpg";
+import Mypic from "../assets/me.jpg";
 import { useLanguage } from "../context/LanguageContext";
 
 const Hero = () => {

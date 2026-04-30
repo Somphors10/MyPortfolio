@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import SP from "../assets/port3.jpg";
+import SP from "../assets/my.jpg";
 import { useLanguage } from "../context/LanguageContext";
 
 const About = () => {
