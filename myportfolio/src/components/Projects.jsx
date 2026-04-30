@@ -2,6 +2,7 @@ import React from "react";
 import Mypic from "../assets/skin.jpg";
 import Mypic1 from "../assets/coza1.jpg";
 import Mypic2 from "../assets/dashboard.jpg";
+import Mypic4 from "../assets/pro4.jpg"
 import { FaGithub } from "react-icons/fa";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -26,6 +27,13 @@ const projects = [
     technologies: "Javascript",
     image: Mypic2,
     link: "https://dash-board-shop-nine.vercel.app",
+  },
+  {
+    id: 4,
+    name: "Auto Nova",
+    technologies: "React JS",
+    image: Mypic4,
+    link: "https://react-selling-car.vercel.app",
   },
 ];
 
