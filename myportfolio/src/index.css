@@ -6,17 +6,44 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     /* Fixed header: anchor jumps land below the bar */
     scroll-padding-top: calc(4.25rem + env(safe-area-inset-top, 0px));
     overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: none !important;
   }
   body {
     @apply antialiased;
     overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: none !important;
+  }
+  #root {
+    min-height: 100%;
+    scroll-snap-type: none !important;
   }
   section[id] {
     scroll-margin-top: calc(4.75rem + env(safe-area-inset-top, 0px));
+    scroll-snap-align: none !important;
+  }
+
+  /* Hide scrollbar everywhere, keep scrolling enabled */
+  html,
+  body,
+  #root,
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  #root::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
   }
 }
 

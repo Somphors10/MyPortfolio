@@ -10,14 +10,14 @@ const projects = [
   {
     id: 1,
     name: "COZA STORE",
-    technologies: "Reach JS",
+    technologies: "React JS",
     image: Mypic1,
     link: "https://coza-shop.vercel.app",
   },
   {
     id: 2,
     name: "SS Face Skin",
-    technologies: "Reach JS",
+    technologies: "React JS",
     image: Mypic,
     link: "https://skin-product-nine.vercel.app",
   },
@@ -39,7 +39,6 @@ const projects = [
 
 const Projects = () => {
   const { t } = useLanguage();
-  const projectItems = t("projects.items");
 
   return (
     <section
@@ -61,26 +60,26 @@ const Projects = () => {
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
-                  alt={projectItems?.[project.id - 1]?.name || project.name}
+                  alt={project.name}
                   className="h-52 w-full object-cover transition duration-500 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-                  {projectItems?.[project.id - 1]?.name || project.name}
+                  {project.name}
                 </h3>
                 <span className="mt-2 inline-flex w-fit rounded-full border border-purple-200/80 bg-purple-50 px-3 py-1 text-xs font-semibold text-violet-700 dark:border-purple-500/30 dark:bg-purple-950/50 dark:text-fuchsia-200">
-                  {projectItems?.[project.id - 1]?.tech || project.technologies || t("projects.tech")}
+                  {project.technologies || t("projects.tech")}
                 </span>
                 <p className="mt-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
                   {t("projects.roleLabel") || "My role"}:{" "}
                   <span className="font-normal">
-                    {projectItems?.[project.id - 1]?.role || t("projects.defaultRole")}
+                    {t("projects.defaultRole")}
                   </span>
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                  {projectItems?.[project.id - 1]?.result || t("projects.defaultResult")}
+                  {t("projects.defaultResult")}
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {project.link ? (

@@ -36,7 +36,7 @@ function App() {
   }, []);
 
   return (
-   <div className={`page-mesh ${lang === "km" ? "font-km" : "font-en"} ${theme === "dark" ? "dark bg-surface-dark text-slate-100" : "bg-surface text-slate-900"} transition-colors duration-500 min-h-screen relative`}>
+   <div className={`page-mesh ${lang === "km" ? "font-km" : "font-en"} ${theme === "dark" ? "dark bg-surface-dark text-slate-100" : "bg-surface text-slate-900"} transition-colors duration-500 min-h-screen relative overflow-x-hidden`}>
       <NavBar />
       {/* Spacer for fixed header (matches NavBar bar + safe area) */}
       <div
@@ -44,7 +44,7 @@ function App() {
         style={{ height: "calc(4.25rem + env(safe-area-inset-top, 0px))" }}
         aria-hidden
       />
-      <div className="relative overflow-x-hidden">
+      <div className="relative">
       <div className="floating-orb w-[22rem] h-[22rem] bg-violet-400 -top-24 -left-20" />
       <div className="floating-orb w-[26rem] h-[26rem] bg-fuchsia-400/90 top-[18%] -right-32" style={{ animationDelay: "1.2s" }} />
       <div className="floating-orb w-72 h-72 bg-indigo-400 bottom-10 left-[25%]" style={{ animationDelay: "2.4s" }} />
